@@ -3,17 +3,6 @@ import funcoes as fn
 # gabarito: abdebaabcd
 
 
-def menorNota(qtdAlunos):
-    notas = list()
-    for i in range(qtdAlunos):
-        nota = dados[i]['nota']
-        notas.append(nota)
-        menorNota = min(notas)
-    for i in range(qtdAlunos):
-        if notas[i] == menorNota:
-            print(dados[i])
-
-
 def mediaTurma(qtdAlunos):
     nota = 0
     for i in range(qtdAlunos):

@@ -69,7 +69,7 @@ def maiorFrequencia(qtdAlunos):
         res = max(set(ordem), key=ordem.count) # método max() usado para pegar maiores notas e método set() usado para limitar para remover duplicados.
     print("A nota com maior frequencia é: " + str(res))
     
-# função que irá apresentar a maior nota dos estudantes:
+# função que irá apresentar a maior nota dentre os estudantes:
 def maiorNota(qtdAlunos):
     notas = list()
     for i in range(qtdAlunos):
@@ -78,4 +78,15 @@ def maiorNota(qtdAlunos):
         maiorNota = max(notas)
     for i in range(qtdAlunos):
         if notas[i] == maiorNota:
+            print(dados[i])
+            
+# função que irá apresentar a menor nota dentre os estudantes:
+def menorNota(qtdAlunos):
+    notas = list()
+    for i in range(qtdAlunos):
+        nota = dados[i]['nota']
+        notas.append(nota)
+        menorNota = min(notas) # O método min() é usado para pegar a menor nota
+    for i in range(qtdAlunos):
+        if notas[i] == menorNota:
             print(dados[i])
