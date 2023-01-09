@@ -7,7 +7,6 @@ def calcularNota(resp, gaba):
             nota += 1
     return nota
 
-
 def infoAlunos(qtdAlunos, gabarito):
     for i in range(qtdAlunos):
         matricula = int(input('Matricula do Aluno: '))
