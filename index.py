@@ -1,19 +1,5 @@
 # gabarito: abdebaabcd
 
-
-def percentualAprovacao(qtdAlunos):
-    cont = 0
-    aprovado = 0
-    for i in range(qtdAlunos):
-        if dados[i]['nota'] >= 7:
-            aprovado += 1
-            cont += 1
-        else:
-            cont += 1
-    percent = (aprovado/cont)*100
-    print(f'O percentual de aprovação é {percent:,.2f}%')
-
-
 def maiorFrequencia(qtdAlunos):
     ordem = list()
     for i in range(qtdAlunos):

@@ -46,3 +46,16 @@ def ordemMenor7(qtdAlunos):
         if ordenar[i]['nota'] < 7: # limita o filtro para notas menores que 7
             aux = ordenar[i]
             print(aux)
+            
+# função que irá apresentar o percentual de estudantes que foram aprovados na turma
+def percentualAprovacao(qtdAlunos):
+    cont = 0
+    aprovado = 0
+    for i in range(qtdAlunos):
+        if dados[i]['nota'] >= 7:
+            aprovado += 1
+            cont += 1
+        else:
+            cont += 1
+    percent = (aprovado/cont)*100
+    print(f'O percentual de aprovação é {percent:,.2f}%')
