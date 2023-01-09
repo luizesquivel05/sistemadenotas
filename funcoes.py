@@ -18,3 +18,9 @@ def calcularNota(resp, gaba):
         if resp[x] == gaba[x]:
             nota += 1
     return nota
+
+# funcao usara para ordenar a lista com os nomes dos estudantes:
+def ordenarNome(qtdAlunos):
+    for i in range(qtdAlunos):
+        ordenar = sorted(dados, key=lambda row: row['nome']) # esse comando lambda realiza uma filtragem das linhas a partir da coluna.
+        print(ordenar[i])
