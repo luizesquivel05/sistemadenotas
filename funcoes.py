@@ -47,7 +47,7 @@ def ordemMenor7(qtdAlunos):
             aux = ordenar[i]
             print(aux)
             
-# função que irá apresentar o percentual de estudantes que foram aprovados na turma
+# função que irá apresentar o percentual de estudantes que foram aprovados na turma:
 def percentualAprovacao(qtdAlunos):
     cont = 0
     aprovado = 0
@@ -59,3 +59,12 @@ def percentualAprovacao(qtdAlunos):
             cont += 1
     percent = (aprovado/cont)*100
     print(f'O percentual de aprovação é {percent:,.2f}%')
+    
+# função que irá apresentar as notas que mais se repetem:
+def maiorFrequencia(qtdAlunos):
+    ordem = list()
+    for i in range(qtdAlunos):
+        nota = dados[i]['nota']
+        ordem.append(nota)
+        res = max(set(ordem), key=ordem.count) # método max() usado para pegar maiores notas e método set() usado para limitar para remover duplicados.
+    print("A nota com maior frequencia é: " + str(res))

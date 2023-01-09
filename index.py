@@ -1,13 +1,5 @@
 # gabarito: abdebaabcd
 
-def maiorFrequencia(qtdAlunos):
-    ordem = list()
-    for i in range(qtdAlunos):
-        nota = dados[i]['nota']
-        ordem.append(nota)
-        res = max(set(ordem), key=ordem.count)
-    print("A nota com maior frequencia é: " + str(res))
-
 
 def maiorNota(qtdAlunos):
     notas = list()
