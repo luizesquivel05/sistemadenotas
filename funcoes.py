@@ -35,6 +35,14 @@ def ordenarNota(qtdAlunos):
 def ordemMaior7(qtdAlunos):
     ordenar = sorted(dados, key=lambda row: row['nota']) # esse comando lambda que realizará filtragem de linhas a partir da coluna nota.
     for i in range(qtdAlunos): 
-        if ordenar[i]['nota'] >= 7: # limita o filtro para 
+        if ordenar[i]['nota'] >= 7: # limita o filtro para notas maior ou igual a 7
+            aux = ordenar[i]
+            print(aux)
+            
+# função que irá ser usada para ordenar a lista de informações dos estudantes a partir da ordem decrescente de notas, para alunos reprovados (nota menor que 7):
+def ordemMenor7(qtdAlunos):
+    ordenar = sorted(dados, key=lambda row: row['nota'], reverse=True) # esse comando lambda que realizará filtragem de linhas a partir da coluna nota.
+    for i in range(qtdAlunos):
+        if ordenar[i]['nota'] < 7: # limita o filtro para notas menores que 7
             aux = ordenar[i]
             print(aux)

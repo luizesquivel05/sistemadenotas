@@ -1,14 +1,6 @@
 # gabarito: abdebaabcd
 
 
-def ordemMenor7(qtdAlunos):
-    ordenar = sorted(dados, key=lambda row: row['nota'], reverse=True)
-    for i in range(qtdAlunos):
-        if ordenar[i]['nota'] < 7:
-            aux = ordenar[i]
-            print(aux)
-
-
 def percentualAprovacao(qtdAlunos):
     cont = 0
     aprovado = 0
