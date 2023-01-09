@@ -1,40 +1,5 @@
 # gabarito: abdebaabcd
 
-def calcularNota(resp, gaba):
-    nota = 0
-    for x in range(len(gaba)):
-        if resp[x] == gaba[x]:
-            nota += 1
-    return nota
-
-def infoAlunos(qtdAlunos, gabarito):
-    for i in range(qtdAlunos):
-        matricula = int(input('Matricula do Aluno: '))
-        nome = str(input('Nome do aluno: ').lower())
-        resp = str(input('Resposta do aluno: ').lower())
-        nota = calcularNota(resp, gabarito)
-        dados.append({'nome': nome, 'matricula': matricula, 'nota': nota})
-
-
-def ordenarNome(qtdAlunos):
-    for i in range(qtdAlunos):
-        ordenar = sorted(dados, key=lambda row: row['nome'])
-        print(ordenar[i])
-
-
-def ordenarNota(qtdAlunos):
-    for i in range(qtdAlunos):
-        ordenar = sorted(dados, key=lambda row: row['nota'])
-        print(ordenar[i])
-
-
-def ordemMaior7(qtdAlunos):
-    ordenar = sorted(dados, key=lambda row: row['nota'])
-    for i in range(qtdAlunos):
-        if ordenar[i]['nota'] >= 7:
-            aux = ordenar[i]
-            print(aux)
-
 
 def ordemMenor7(qtdAlunos):
     ordenar = sorted(dados, key=lambda row: row['nota'], reverse=True)

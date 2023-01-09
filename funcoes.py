@@ -30,3 +30,11 @@ def ordenarNota(qtdAlunos):
     for i in range(qtdAlunos):
         ordenar = sorted(dados, key=lambda row: row['nota']) # esse comando lambda que realizará filtragem de linhas a partir da coluna nota.
         print(ordenar[i])
+  
+# função que irá ser usada para ordenar a lista de informações dos estudantes a partir da ordem crescente de notas, para alunos aprovados (nota maior que 7):
+def ordemMaior7(qtdAlunos):
+    ordenar = sorted(dados, key=lambda row: row['nota']) # esse comando lambda que realizará filtragem de linhas a partir da coluna nota.
+    for i in range(qtdAlunos): 
+        if ordenar[i]['nota'] >= 7: # limita o filtro para 
+            aux = ordenar[i]
+            print(aux)
