@@ -1,15 +1,6 @@
+import funcoes as fn
+
 # gabarito: abdebaabcd
-
-
-def maiorNota(qtdAlunos):
-    notas = list()
-    for i in range(qtdAlunos):
-        nota = dados[i]['nota']
-        notas.append(nota)
-        maiorNota = max(notas)
-    for i in range(qtdAlunos):
-        if notas[i] == maiorNota:
-            print(dados[i])
 
 
 def menorNota(qtdAlunos):
@@ -34,7 +25,7 @@ def mediaTurma(qtdAlunos):
 gabarito = input('Digite o gabarito da prova: ').lower()
 qtdAlunos = int(input('Digite a quantidade de alunos: '))
 dados = list()
-info = infoAlunos(qtdAlunos, gabarito)
+info = fn.infoAlunos(qtdAlunos, gabarito)
 loop = 1
 while loop == 1:
     print('\n')
@@ -51,23 +42,23 @@ while loop == 1:
     opcao = int(input())
     print('\n')
     if opcao == 1:
-        ordenar = ordenarNome(qtdAlunos)
+        ordenar = fn.ordenarNome(qtdAlunos)
     if opcao == 2:
-        ordenar = ordenarNota(qtdAlunos)
+        ordenar = fn.ordenarNota(qtdAlunos)
     if opcao == 3:
-        ordenar = ordemMaior7(qtdAlunos)
+        ordenar = fn.ordemMaior7(qtdAlunos)
     if opcao == 4:
-        ordenar = ordemMenor7(qtdAlunos)
+        ordenar = fn.ordemMenor7(qtdAlunos)
     if opcao == 5:
-        aprovacao = percentualAprovacao(qtdAlunos)
+        aprovacao = fn.percentualAprovacao(qtdAlunos)
     if opcao == 6:
-        frequencia = maiorFrequencia(qtdAlunos)
+        frequencia = fn.maiorFrequencia(qtdAlunos)
     if opcao == 7:
-        maior = maiorNota(qtdAlunos)
+        maior = fn.maiorNota(qtdAlunos)
     if opcao == 8:
-        menor = menorNota(qtdAlunos)
+        menor = fn.menorNota(qtdAlunos)
     if opcao == 9:
-        media = mediaTurma(qtdAlunos)
+        media = fn.mediaTurma(qtdAlunos)
     print('\n')
     print('Deseja voltar para o menu? Digite 1 para SIM e 0 para NÃO')
     loop = int(input())
