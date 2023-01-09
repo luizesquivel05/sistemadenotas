@@ -3,14 +3,6 @@ import funcoes as fn
 # gabarito: abdebaabcd
 
 
-def mediaTurma(qtdAlunos):
-    nota = 0
-    for i in range(qtdAlunos):
-        nota += dados[i]['nota']
-    media = (nota/qtdAlunos)
-    print(f'A média da turma é: {media:,.2f}')
-
-
 gabarito = input('Digite o gabarito da prova: ').lower()
 qtdAlunos = int(input('Digite a quantidade de alunos: '))
 dados = list()

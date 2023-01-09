@@ -1,5 +1,3 @@
-gabarito = input('Digite o gabarito da prova: ').lower() # leitura do gabarito e o deixa em minúsculo.
-qtdAlunos = int(input('Digite a quantidade de alunos: ')) # leitura da quantidade de alunos.
 dados = list() # lista para armazenar informações dos estudantes.
 
 # funcao que irá receber as informações dos estudantes e envia para a lista:
@@ -90,3 +88,11 @@ def menorNota(qtdAlunos):
     for i in range(qtdAlunos):
         if notas[i] == menorNota:
             print(dados[i])
+            
+# função que irá apresentar a média da turma:
+def mediaTurma(qtdAlunos):
+    nota = 0
+    for i in range(qtdAlunos):
+        nota += dados[i]['nota']
+    media = (nota/qtdAlunos)
+    print(f'A média da turma é: {media:,.2f}')
