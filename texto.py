@@ -1,3 +1,7 @@
+start = '''
+    Para começar, digite csv para fazer upload do csv com gabarito e respostas e não para colocar manualmente:
+'''
+
 menu = f'''
     {'=' * 72} Menu {'=' * 75}
     |{' ' *151}|
@@ -23,5 +27,3 @@ menu = f'''
     |{' ' *151}|
     {'='*153}
 '''
-
-print(menu)
