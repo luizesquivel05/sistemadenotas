@@ -1,59 +1,8 @@
-import funcoes as fn
 import texto as txt
 import leitura as lt
-
+import os
 
 dados = list() # lista para armazenar informações dos estudantes.
-
-# funcao do menu:
-def menu(csv):
-    if csv != "csv":
-        qtdAlunos = int(input('Digite a quantidade de alunos: '))
-        resp = str(input(''))
-        print(txt.menu)
-        loop = 1
-        while loop == 1:
-            print(txt.menu())
-            opcao = int(input())
-            print('\n')
-            if opcao == 1:
-                ordenar = fn.ordenarNome(qtdAlunos)
-            if opcao == 2:
-                ordenar = fn.ordenarNota(qtdAlunos)
-            if opcao == 3:
-                ordenar = fn.ordemMaior7(qtdAlunos)
-            if opcao == 4:
-                ordenar = fn.ordemMenor7(qtdAlunos)
-            if opcao == 5:
-                aprovacao = fn.percentualAprovacao(qtdAlunos)
-            if opcao == 6:
-                frequencia = fn.maiorFrequencia(qtdAlunos)
-            if opcao == 7:
-                maior = fn.maiorNota(qtdAlunos)
-            if opcao == 8:
-                menor = fn.menorNota(qtdAlunos)
-            if opcao == 9:
-                media = fn.mediaTurma(qtdAlunos)
-            print('\n')
-            print('Deseja voltar para o menu? Digite 1 para SIM e 0 para NÃO')
-            loop = int(input())
-            print('\n')
-    else:
-        print(infoalunosCSV())
-
-# funcao que irá calcular a notas:
-def calcularNota(resp, gaba, csv):
-    nota = 0
-    if csv == "N":
-        for x in range(len(gaba)):
-            if resp[x] == gaba[x]:
-                nota += 1
-        return nota
-    else:
-        for x in range(len(gaba)):
-            if resp[x] == gaba[x]:
-                nota += 1
-        return nota
 
 # funcao que irá receber as informações dos estudantes e envia para a lista:
 def infoAlunos(qtdAlunos, gabarito):
@@ -68,13 +17,26 @@ def infoAlunos(qtdAlunos, gabarito):
 def infoalunosCSV():
     for i in open('respostas.csv', 'r'):
         aux = i.split(';')
-        matricula = aux[0]
-        nome = aux[1]
-        resps = aux[2]
+        matricula = aux[0][10:]
+        nome = aux[1][5:]
+        resps = aux[2][10:]
         nota = calcularNota(resp=resps, gaba=lt.gabarito, csv="S")
         dados.append({'nome': nome, 'matricula': matricula, 'nota': nota})
-    dados.pop(0)
     return dados
+
+# funcao que irá calcular a notas:
+def calcularNota(resp, gaba, csv):
+    nota = 0
+    if csv == "N":
+        for x in range(len(gaba)):
+            if resp[x] == gaba[x]:
+                nota += 1
+        return nota
+    else:
+        for x in range(len(gaba)):
+            if resp[x] == gaba[x]:
+                nota += 1
+        return nota
 
 # função que usará para ordenar a lista com os nomes dos estudantes:
 def ordenarNome(qtdAlunos):
@@ -155,3 +117,70 @@ def mediaTurma(qtdAlunos):
         nota += dados[i]['nota']
     media = (nota/qtdAlunos)
     print(f'A média da turma é: {media:,.2f}')
+
+# funcao do menu:
+def menu(csv):
+    if csv != "csv":
+        qtdAlunos = int(input('Digite a quantidade de alunos: '))
+        gabarito = str(input('Digite o gabarito: '))
+        infoalunos = infoAlunos(qtdAlunos, gabarito)
+        loop = 1
+        while loop == 1:
+            print(txt.menu)
+            opcao = int(input())
+            print('\n')
+            if opcao == 1:
+                ordenarNome(qtdAlunos)
+            if opcao == 2:
+                ordenarNota(qtdAlunos)
+            if opcao == 3:
+                ordemMaior7(qtdAlunos)
+            if opcao == 4:
+                ordemMenor7(qtdAlunos)
+            if opcao == 5:
+                percentualAprovacao(qtdAlunos)
+            if opcao == 6:
+                maiorFrequencia(qtdAlunos)
+            if opcao == 7:
+                maiorNota(qtdAlunos)
+            if opcao == 8:
+                menorNota(qtdAlunos)
+            if opcao == 9:
+                mediaTurma(qtdAlunos)
+            print('\n')
+            print('Deseja voltar para o menu? Digite 1 para SIM e 0 para NÃO')
+            loop = int(input())
+            if loop == 1: os.system('cls')
+            print('\n')
+    else:
+        qtdAlunos = int(input('Digite a quantidade de alunos: '))
+        infoalunosCSV()
+        gabarito = lt.gabarito
+        loop = 1
+        while loop == 1:
+            print(txt.menu)
+            opcao = int(input())
+            print('\n')
+            if opcao == 1:
+                ordenarNome(qtdAlunos)
+            if opcao == 2:
+                ordenarNota(qtdAlunos)
+            if opcao == 3:
+                ordemMaior7(qtdAlunos)
+            if opcao == 4:
+                ordemMenor7(qtdAlunos)
+            if opcao == 5:
+                percentualAprovacao(qtdAlunos)
+            if opcao == 6:
+                maiorFrequencia(qtdAlunos)
+            if opcao == 7:
+                maiorNota(qtdAlunos)
+            if opcao == 8:
+                menorNota(qtdAlunos)
+            if opcao == 9:
+                mediaTurma(qtdAlunos)
+            print('\n')
+            print('Deseja voltar para o menu? Digite 1 para SIM e 0 para NÃO')
+            loop = int(input())
+            if loop == 1: os.system('cls')
+            print('\n')
