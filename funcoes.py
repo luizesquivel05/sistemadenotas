@@ -122,7 +122,13 @@ def mediaTurma(qtdAlunos):
 def menu(csv):
     if csv != "csv":
         qtdAlunos = int(input('Digite a quantidade de alunos: '))
+        while qtdAlunos <= 0:
+            print('É necessário ter 1 ou mais estudantes! Tente novamente...')
+            qtdAlunos = int(input('Digite a quantidade de alunos: '))
         gabarito = str(input('Digite o gabarito: '))
+        while qtdAlunos == "":
+            print('É necessário ter 1 ou mais questões! Tente novamente...')
+            qtdAlunos = int(input('Digite a quantidade de alunos: '))
         infoalunos = infoAlunos(qtdAlunos, gabarito)
         loop = 1
         while loop == 1:
