@@ -1,9 +1,32 @@
 import texto as txt
 import leitura as lt
 import os
+import loginecadastro as lg
 
-dados = list() # lista para armazenar informações dos estudantes.
+dados = list() # lista para armazenar informações dos estudantes.,
 
+
+# Função para validação dos dados de nome de usuário e senha:
+def autenticar(nome_de_usuario, senha):
+    for usuario in lg.usuarios:
+        if usuario["login"] == nome_de_usuario and usuario["senha"] == senha:
+            return True
+    return False
+
+# Função que realiza leitura de nome de usuário e senha e, em seguida, valida:
+def fazerLOGIN():
+    i = 4
+    while i >= 0:
+        nome_de_usuario = input("Nome de usuário: ")
+        senha = input("Senha: ")
+        if autenticar(nome_de_usuario, senha):
+            os.system('cls')
+            break
+        else:
+            print("Falha no login. Por favor, tente novamente.")
+            i -= 1
+    else:
+        return "max"
 # funcao que irá receber as informações dos estudantes e envia para a lista:
 def infoAlunos(qtdAlunos, gabarito):
     for i in range(qtdAlunos):
