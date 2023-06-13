@@ -73,7 +73,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       <a href="https://www.linkedin.com/in/luizesquivel/">
         <img src="img/luiz.png" width="100px;" alt="Foto de Luiz Esquivel"/><br>
         <sub>
-          <b>Luiz Esquivel - 20 anos, médio completo, analista de TI.</b>
+          <b>Luiz Esquivel - 20 anos, médio completo, analista de Desenvolvimento de Sistemas.</b>
         </sub>
       </a>
     </td>
