@@ -83,7 +83,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 _______________________________________________________________________________________________________
 # GRADEBOOK SYSTEM.
 
-<img src="img/gradebook.png" alt="example image">
+<img src="img/boletim.png" alt="example image">
 
 > Application to manage the gradebook of a school.
 
